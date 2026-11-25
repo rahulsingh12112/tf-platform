@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export TF_INPUT=0
 acct="$1"; action="${2:-plan}"
 vars="../accounts/${acct}.tfvars"
 
