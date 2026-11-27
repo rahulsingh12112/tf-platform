@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Terraform working directories (providers, modules, backend config)
 .terraform/
 .terraform-*/
@@ -18,3 +19,11 @@ override.tf.json
 terraform.rc
 
 .DS_Store
+=======
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+*.tfvars
+crash.log
+>>>>>>> 4259012 (EC2 lab with Terraform and GitHub Actions)
