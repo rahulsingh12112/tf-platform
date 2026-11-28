@@ -1,0 +1,13 @@
+name: Lab Tags
+on: 
+  push:
+    tags:
+      - v*
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Tag: ${{ github.ref_name }}"
+          echo "Full ref: ${{ github.ref }}"
+        
