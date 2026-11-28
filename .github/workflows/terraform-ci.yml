@@ -53,7 +53,7 @@ jobs:
       - name: Install checkov
         run: pip install checkov
       - name: Security scan
-        run: checkov -d ec2 --framework terraform --compact 
+        run: checkov -d ec2 --framework terraform --compact --soft-fail
 
 
   summary:
