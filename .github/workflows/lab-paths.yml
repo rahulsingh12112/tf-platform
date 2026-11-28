@@ -1,0 +1,14 @@
+name: Lab Paths
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lab/infra/**'
+
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Infra folder badla, workflow chala"
+
