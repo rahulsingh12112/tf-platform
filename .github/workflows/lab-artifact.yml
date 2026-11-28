@@ -15,6 +15,7 @@ jobs:
       - run: terraform init -backend=false -input=false
       - run: |
           mkdir -p ../reports
+          terraform init -backend=false -input=false
           terraform validate -json > ../reports/validate.json
           terraform providers > ../reports/providers.txt
           ls -la ../reports
