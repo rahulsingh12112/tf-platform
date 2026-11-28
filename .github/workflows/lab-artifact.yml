@@ -1,0 +1,26 @@
+name: Lab Artifact
+on: workflow_dispatch
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ec2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.15.8
+          terraform_wrapper: false
+      - run: terraform init -backend=false -input=false
+      - run: |
+          mkdir -p ../reports
+          terraform validate -json > ../reports/validate.json
+          terraform providers > ../reports/providers.txt
+          ls -la ../reports
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tf-reports
+          path: reports/
+          retention-days: 1
+          if-no-files-found: error
