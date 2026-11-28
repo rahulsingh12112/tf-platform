@@ -79,3 +79,7 @@ jobs:
           echo "Runner:   ${{ runner.os }}"
           echo "fmt=${{ needs.fmt.result }} validate=${{ needs.validate.result }} security=${{ needs.security.result }}"
           echo "Sab checks pass. EC2 code plan ke liye ready hai."
+      
+      - name: Only on main
+        if: github.ref == 'refs/heads/main'
+        run: echo "Ye step sirf main branch par chalta hai"
