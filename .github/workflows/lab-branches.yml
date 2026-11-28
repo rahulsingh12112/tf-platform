@@ -1,0 +1,11 @@
+name: Lab Branches
+on:
+  push:
+    branches:
+      - main
+      - release/**
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Chala branch ${{ github.ref_name }} par"
