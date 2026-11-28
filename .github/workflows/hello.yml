@@ -1,0 +1,21 @@
+name: Hello EC2 Repo            # Actions tab mein ye naam dikhega
+
+on: workflow_dispatch           # Manual button se chalega
+
+jobs:
+  hello:                        # Job ID, naam apni marzi ka
+    runs-on: ubuntu-latest      # GitHub ki Ubuntu machine
+    steps:
+      - name: Code laao
+        uses: actions/checkout@v4
+
+      - name: Ek line ki command
+        run: echo "Runner par hello!"
+
+      - name: Multi-line commands
+        run: |
+          echo "Repo ke folders:"
+          ls -la
+          echo "EC2 ki Terraform files:"
+          ls ec2/
+          terraform version
