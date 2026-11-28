@@ -18,4 +18,4 @@ jobs:
           ls -la
           echo "EC2 ki Terraform files:"
           ls ec2/
-          terraform version
+       
