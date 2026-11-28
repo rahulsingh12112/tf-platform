@@ -1,0 +1,22 @@
+name: Lab PR Types
+on:
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - closed
+
+jobs:
+  show:
+    runs-on: ubuntu_latest
+    steps:
+      - run: |
+          echo "Action: ${{ github.event.action }}"
+          echo "PR number: ${{ github.event.pull_request.number }}"
+          echo "Head: ${{ github.head_ref }} → Base: ${{ github.base_ref }}"
+          echo "Merged: ${{ github.event.pull_request.merged }}"
+
+
+    
